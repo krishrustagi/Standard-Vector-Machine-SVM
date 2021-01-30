@@ -1,9 +1,7 @@
-# To add a new cell, type ' '
-# To add a new markdown cell, type '  [markdown]'
-
 from sklearn.metrics import accuracy_score
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -40,6 +38,11 @@ features = data
 features.drop(["Id"], inplace=True, axis=1)
 features.drop(["Species"], inplace=True, axis=1)
 print(features)  # features are sepals and petals
+
+
+scaler = MinMaxScaler()
+features = scaler.fit_transform(features)  # rescaling
+print(features)
 
 
 features_train, features_test, labels_train, labels_test = train_test_split(
