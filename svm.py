@@ -1,6 +1,3 @@
-# To add a new cell, type ' '
-# To add a new markdown cell, type '  [markdown]'
-
 from sklearn.metrics import accuracy_score
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
